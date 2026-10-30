@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package shopcore;
+
+option go_package = "github.com/nilesh/shopcore-contracts/shopcorepb/shopcorepb";
+
+service ProductService {
+  rpc GetProductDetails(ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest {
+  string product_id = 1;
+}
+
+message ProductResponse {
+  string product_id = 1;
+  int32 price = 2;
+  string vendor_id = 3;
+  string categroy = 4;
+}
+
+service UserService {
+  rpc GetUserDetails(UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+  string user_id = 1;
+}
+
+message UserResponse {
+  string UserName = 1;
+  int32 Age = 2;
+  string Email = 3;
+  string FirstName = 4;
+  string LastName = 5;
+  string Address = 6;
+}
